@@ -1,13 +1,8 @@
 import cv2
 import numpy as np
 from pyzbar.pyzbar import decode
-import winsound
 
 savedData = []
-
-
-def beep():
-    winsound.Beep(150, 1000)
 
 
 def decoder(image):
@@ -33,7 +28,6 @@ def decoder(image):
 def checkDatabase(barcode):
     if barcode not in savedData:
         savedData.append(barcode)
-        beep()
     print("LIST: ", savedData)
 
 
